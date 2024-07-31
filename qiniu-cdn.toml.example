@@ -1,0 +1,29 @@
+# 是否开启debug模式, 默认关闭
+debug=false
+# 下载的日志放在各自域名下的目录里, 默认开启
+download_log_domain_dir=true
+# 每5分钟流量告警(MB)阈值，默认200MB
+five_minute_traffic=200
+# 每5分钟请求次数告警(次)阈值，通过日志分析接口获取，有一定的延时，默认1000次
+five_minute_count=1000
+
+[cdn]
+# cdn access_key
+access_key="abc"
+# cdn secret_key
+secret_key="123"
+# cdn 绑定的域名
+domain="static.example.com"
+
+[monitor]
+# 企业微信机器人
+qy_robot="https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=f7974a4a-xxxx"
+
+# 诊断疑似IP需要用到这个配置
+[blackip]
+# 诊断疑似ip的策略，支持流量和请求次数，这两个可以通过&&(且)或||(或)组合起来，最多支持两个
+# T:1:200 表示近1天的流量达到200MB及以上就列入疑似ip
+# C:1:10000 表示近1天的请求次数达到10000及以上就列入疑似ip
+policy="T:1:200||C:2:10000"
+# 是否覆盖已有配置，默认是true
+rewrite=true

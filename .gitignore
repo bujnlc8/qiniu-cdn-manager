@@ -1,0 +1,7 @@
+/target
+qiniu-cdn.toml
+logs/
+.DS_Store
+artifacts/
+.env
+*.log
