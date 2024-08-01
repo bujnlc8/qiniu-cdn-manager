@@ -2,7 +2,7 @@ test:
 	cargo test -- --nocapture
 
 PLATFORMS:=x86_64-apple-darwin x86_64-unknown-linux-musl aarch64-apple-darwin
-VERSION:=0.1.0
+VERSION:=0.1.1
 CLI:=qiniu-cdn-manager
 HOST_TRIPLE := $(shell rustc -vV | grep 'host:' | awk '{print $$2}')
 SHELLS:=fish zsh bash
@@ -20,7 +20,6 @@ aarch64-apple-darwin:
 
 artifacts:all completions
 	@mkdir -p artifacts/$(VERSION)
-	@mkdir -p filehash
 	@for platform in $(PLATFORMS); do \
 		if [ "$$platform" == "$(HOST_TRIPLE)" ]; then \
 			chmod +x target/release/$(CLI); \
@@ -40,7 +39,7 @@ artifacts:all completions
 			rm -rf /tmp/$(CLI); \
 		fi; \
 		mv $(CLI)_$$platform.tar.gz artifacts/$(VERSION); \
-		md5 -q artifacts/$(VERSION)/$(CLI)_$$platform.tar.gz > filehash/$(CLI)_$$platform.tar.gz.md5; \
+		md5 -q artifacts/$(VERSION)/$(CLI)_$$platform.tar.gz > artifacts/$(VERSION)/$(CLI)_$$platform.tar.gz.md5; \
 	done
 	@echo "generate artifacts done !!!"
 

@@ -20,21 +20,21 @@
 
 > - 功能主要由各个子命令来完成，如`info`、`ipacl`等，通过`qiniu-cdn-manager subcommand --help`可查看子命令的参数
 
-> - 支持 shell 命令补全，补全文件在[completions](./completions)，目前支持`fish`、`bash`及`zsh`。也可以通过`qiniu-cdn-manager --completion fish|zsh|bash`来生成
+> - 支持 shell 命令补全，目前支持`fish`、`bash`及`zsh`。也可以通过`qiniu-cdn-manager --completion fish|zsh|bash`来生成
 
 ## 下载
 
-- [⬇️ 点击下载 x86_64-apple-darwin](./artifacts/0.1.0/qiniu-cdn-manager_x86_64-apple-darwin.tar.gz)
+- [⬇️ 点击下载 x86_64-apple-darwin](https://github.com/bujnlc8/qiniu-cdn-manager/releases/download/0.1.1/qiniu-cdn-manager_x86_64-apple-darwin.tar.gz)
 
-  > [qiniu-cdn-manager_x86_64-apple-darwin.tar.gz.md5](./filehash/qiniu-cdn-manager_x86_64-apple-darwin.tar.gz.md5)
+  > [qiniu-cdn-manager_x86_64-apple-darwin.tar.gz.md5](https://github.com/bujnlc8/qiniu-cdn-manager/releasess/download/0.1.1/qiniu-cdn-manager_x86_64-apple-darwin.tar.gz.md5)
 
-- [⬇️ 点击下载 aarch64-apple-darwin](./artifacts/0.1.0/qiniu-cdn-manager_aarch64-apple-darwin.tar.gz)
+- [⬇️ 点击下载 aarch64-apple-darwin](https://github.com/bujnlc8/qiniu-cdn-manager/releases/download/0.1.1/qiniu-cdn-manager_aarch64-apple-darwin.tar.gz)
 
-  > [qiniu-cdn-manager_aarch64-apple-darwin.tar.gz.md5](./filehash/qiniu-cdn-manager_aarch64-apple-darwin.tar.gz.md5)
+  > [qiniu-cdn-manager_aarch64-apple-darwin.tar.gz.md5](https://github.com/bujnlc8/qiniu-cdn-manager/releasess/download/0.1.1/qiniu-cdn-manager_aarch64-apple-darwin.tar.gz.md5)
 
-- [⬇️ 点击下载 x86_64-unknown-linux-musl](./artifacts/0.1.0/qiniu-cdn-manager_x86_64-unknown-linux-musl.tar.gz)
+- [⬇️ 点击下载 x86_64-unknown-linux-musl](https://github.com/bujnlc8/qiniu-cdn-manager/releases/download/0.1.1/qiniu-cdn-manager_x86_64-unknown-linux-musl.tar.gz)
 
-  > [qiniu-cdn-manager_x86_64-unknown-linux-musl.tar.gz.md5](./filehash/qiniu-cdn-manager_x86_64-unknown-linux-musl.tar.gz.md5)
+  > [qiniu-cdn-manager_x86_64-unknown-linux-musl.tar.gz.md5](https://github.com/bujnlc8/qiniu-cdn-manager/releasess/download/0.1.1/qiniu-cdn-manager_x86_64-unknown-linux-musl.tar.gz.md5)
 
 请根据你的操作系统下载相应的版本，可对比 md5 hash 值确定是否下载了最新的版本
 
