@@ -22,6 +22,21 @@
 
 > - 支持 shell 命令补全，目前支持`fish`、`bash`及`zsh`。也可以通过`qiniu-cdn-manager --completion fish|zsh|bash`来生成
 
+除了查询的功能，给几个比较`高级`的用法：
+
+```
+# 5分钟流量告警
+*/5 * * * * /usr/local/bin/qiniu-cdn-manager -c /etc/qiniu-cdn.toml traffic --all-domain -g 5min --no-print 2>&1 >> /var/log/qiniu/qiniu_traffic.log
+
+# 5分钟请求次数告警
+*/5 * * * * /usr/local/bin/qiniu-cdn-manager -c /etc/qiniu-cdn.toml count --all-domain -f 5min 2>&1 >> /var/log/qiniu/qiniu_count.log
+
+# 通过配置诊断策略筛选并应用IP 黑名单
+*/5 * * * * /usr/local/bin/qiniu-cdn-manager -c /etc/qiniu-cdn.toml diagnostic --all-domain --apply-black-ip --no-rewrite --no-prompt 2>&1 >> /var/log/qiniu/qiniu_blackip.log
+```
+
+更多的功能选项可以通过`--help`查看
+
 ## 下载
 
 - [⬇️ 点击下载 x86_64-apple-darwin](https://github.com/bujnlc8/qiniu-cdn-manager/releases/download/0.1.1/qiniu-cdn-manager_x86_64-apple-darwin.tar.gz)
