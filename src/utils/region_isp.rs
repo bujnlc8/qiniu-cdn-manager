@@ -1,3 +1,5 @@
+//! 区域运营商代码
+
 // region code列表
 pub const REGION_CODE_LIST: [&str; 38] = [
     "china",
