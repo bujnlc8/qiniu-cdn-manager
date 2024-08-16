@@ -306,7 +306,7 @@ impl Client {
         ips: &str,
         rewrite: bool,
         domain: &str,
-    ) -> Result<(), anyhow::Error> {
+    ) -> Result<usize, anyhow::Error> {
         let mut check_num = 0;
         let mut ip_acltype = IpACLType::Blank;
         if black {
@@ -332,7 +332,7 @@ impl Client {
         if close {
             self.ip_acl(vec![], IpACLType::Blank, domain).await?;
             println!("{}", "关闭成功 ✅".green());
-            return Ok(());
+            return Ok(0);
         }
         let ips: Vec<&str> = ips.split(',').collect();
         if ips.is_empty() {
@@ -371,7 +371,7 @@ impl Client {
                 }
                 if !should_invoke_api && !ips.is_empty() {
                     println!("{}", "与线上配置相同，跳过设置！".yellow());
-                    return Ok(());
+                    return Ok(0);
                 }
             } else if !remove_ips.is_empty() {
                 return Err(anyhow!("当前IP模式和线上不一致，无法移除IP！"));
@@ -380,18 +380,20 @@ impl Client {
                 println!("[WARN] {}", "ip列表为空，将IP黑/白名单关闭".yellow());
                 ip_acltype = IpACLType::Blank;
             }
-            let response = self.ip_acl(ips, ip_acltype, domain).await?;
+            let response = self.ip_acl(ips.clone(), ip_acltype, domain).await?;
             if response.code.is_some() && response.code.unwrap() != 200 {
                 return Err(anyhow!("{}", response.error.unwrap()));
             }
+            println!("{}", "操作成功 ✅".green());
+            return Ok(ips.len());
         } else {
-            let response = self.ip_acl(ips, ip_acltype, domain).await?;
+            let response = self.ip_acl(ips.clone(), ip_acltype, domain).await?;
             if response.code.is_some() && response.code.unwrap() != 200 {
                 return Err(anyhow!("{}", response.error.unwrap()));
             }
+            println!("{}", "操作成功 ✅".green());
+            return Ok(ips.len());
         }
-        println!("{}", "操作成功 ✅".green());
-        Ok(())
     }
 
     pub async fn diagnose_ip(
@@ -574,9 +576,10 @@ impl Client {
             if !no_prompt && !prompt("将采用覆盖模式，将覆盖线上配置?", None) {
                 return Ok(());
             }
-            self.set_ip_acl(true, false, false, ipss.join(",").as_str(), true, domain)
+            let ip_num = self
+                .set_ip_acl(true, false, false, ipss.join(",").as_str(), true, domain)
                 .await?;
-            if !no_qy_notify && self.config.monitor.qy_robot.is_some() {
+            if ip_num > 0 && !no_qy_notify && self.config.monitor.qy_robot.is_some() {
                 QyRobot::new(self.config.monitor.clone().qy_robot.unwrap())
                     .send_message(&msg)
                     .await?;
@@ -585,9 +588,10 @@ impl Client {
             if !no_prompt && !prompt("将采用追加模式，不会覆盖线上配置?", None) {
                 return Ok(());
             }
-            self.set_ip_acl(true, false, false, ipss.join(",").as_str(), false, domain)
+            let ip_num = self
+                .set_ip_acl(true, false, false, ipss.join(",").as_str(), false, domain)
                 .await?;
-            if !no_qy_notify && self.config.monitor.qy_robot.is_some() {
+            if ip_num > 0 && !no_qy_notify && self.config.monitor.qy_robot.is_some() {
                 QyRobot::new(self.config.monitor.clone().qy_robot.unwrap())
                     .send_message(&msg)
                     .await?;

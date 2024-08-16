@@ -2,7 +2,7 @@ test:
 	cargo test -- --nocapture
 
 PLATFORMS:=x86_64-apple-darwin x86_64-unknown-linux-musl aarch64-apple-darwin
-VERSION:=0.1.1
+VERSION:=0.1.2
 CLI:=qiniu-cdn-manager
 HOST_TRIPLE := $(shell rustc -vV | grep 'host:' | awk '{print $$2}')
 SHELLS:=fish zsh bash
@@ -27,6 +27,7 @@ artifacts:all completions
 			cp target/release/$(CLI) /tmp/$(CLI); \
 			cp qiniu-cdn.toml.example /tmp/$(CLI); \
 			cp -R completions /tmp/$(CLI); \
+			cp README.md /tmp/$(CLI); \
 			tar zcvf $(CLI)_$$platform.tar.gz  -C /tmp $(CLI); \
 			rm -rf /tmp/$(CLI); \
 		else \
@@ -35,6 +36,7 @@ artifacts:all completions
 			cp target/$$platform/release/$(CLI) /tmp/$(CLI); \
 			cp qiniu-cdn.toml.example /tmp/$(CLI); \
 			cp -R completions /tmp/$(CLI); \
+			cp README.md /tmp/$(CLI); \
 			tar zcvf $(CLI)_$$platform.tar.gz -C /tmp $(CLI); \
 			rm -rf /tmp/$(CLI); \
 		fi; \

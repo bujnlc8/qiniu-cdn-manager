@@ -1,3 +1,6 @@
+[![Crates.io](https://img.shields.io/crates/v/qiniu-cdn-manager?style=flat-square)](https://crates.io/crates/qiniu-cdn-manager)
+[![qiniu-cdn-manager](https://github.com/bujnlc8/qiniu-cdn-manager/actions/workflows/qiniu-cdn-manager.yml/badge.svg)](https://github.com/bujnlc8/qiniu-cdn-manager/actions/workflows/qiniu-cdn-manager.yml)
+
 # 七牛 CDN 管理工具
 
 提供七牛 CDN 数据查询、流量告警、修改 IP 黑/白名单、诊断疑似 IP、日志过滤等功能
@@ -39,17 +42,17 @@
 
 ## 下载
 
-- [⬇️ 点击下载 x86_64-apple-darwin](https://github.com/bujnlc8/qiniu-cdn-manager/releases/download/0.1.1/qiniu-cdn-manager_x86_64-apple-darwin.tar.gz)
+- [⬇️ 点击下载 x86_64-apple-darwin](https://github.com/bujnlc8/qiniu-cdn-manager/releases/download/0.1.2/qiniu-cdn-manager_x86_64-apple-darwin.tar.gz)
 
-  > [qiniu-cdn-manager_x86_64-apple-darwin.tar.gz.md5](https://github.com/bujnlc8/qiniu-cdn-manager/releasess/download/0.1.1/qiniu-cdn-manager_x86_64-apple-darwin.tar.gz.md5)
+  > [qiniu-cdn-manager_x86_64-apple-darwin.tar.gz.md5](https://github.com/bujnlc8/qiniu-cdn-manager/releasess/download/0.1.2/qiniu-cdn-manager_x86_64-apple-darwin.tar.gz.md5)
 
-- [⬇️ 点击下载 aarch64-apple-darwin](https://github.com/bujnlc8/qiniu-cdn-manager/releases/download/0.1.1/qiniu-cdn-manager_aarch64-apple-darwin.tar.gz)
+- [⬇️ 点击下载 aarch64-apple-darwin](https://github.com/bujnlc8/qiniu-cdn-manager/releases/download/0.1.2/qiniu-cdn-manager_aarch64-apple-darwin.tar.gz)
 
-  > [qiniu-cdn-manager_aarch64-apple-darwin.tar.gz.md5](https://github.com/bujnlc8/qiniu-cdn-manager/releasess/download/0.1.1/qiniu-cdn-manager_aarch64-apple-darwin.tar.gz.md5)
+  > [qiniu-cdn-manager_aarch64-apple-darwin.tar.gz.md5](https://github.com/bujnlc8/qiniu-cdn-manager/releasess/download/0.1.2/qiniu-cdn-manager_aarch64-apple-darwin.tar.gz.md5)
 
-- [⬇️ 点击下载 x86_64-unknown-linux-musl](https://github.com/bujnlc8/qiniu-cdn-manager/releases/download/0.1.1/qiniu-cdn-manager_x86_64-unknown-linux-musl.tar.gz)
+- [⬇️ 点击下载 x86_64-unknown-linux-musl](https://github.com/bujnlc8/qiniu-cdn-manager/releases/download/0.1.2/qiniu-cdn-manager_x86_64-unknown-linux-musl.tar.gz)
 
-  > [qiniu-cdn-manager_x86_64-unknown-linux-musl.tar.gz.md5](https://github.com/bujnlc8/qiniu-cdn-manager/releasess/download/0.1.1/qiniu-cdn-manager_x86_64-unknown-linux-musl.tar.gz.md5)
+  > [qiniu-cdn-manager_x86_64-unknown-linux-musl.tar.gz.md5](https://github.com/bujnlc8/qiniu-cdn-manager/releasess/download/0.1.2/qiniu-cdn-manager_x86_64-unknown-linux-musl.tar.gz.md5)
 
 请根据你的操作系统下载相应的版本，可对比 md5 hash 值确定是否下载了最新的版本
 

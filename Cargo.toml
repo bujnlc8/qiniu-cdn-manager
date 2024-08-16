@@ -3,11 +3,13 @@ name = "qiniu-cdn-manager"
 description = "A CLI to Manage Qiniu CDN."
 authors = ["linghaihui <haihuiling2014@gmail.com"]
 readme = "README.md"
-version = "0.1.1"
+version = "0.1.2"
 license = "MIT"
 edition = "2021"
 repository = "https://github.com/bujnlc8/qiniu-cdn-manager"
 categories = ["command-line-utilities"]
+exclude = ["snapshots", "Makefile"]
+keywords = ["qiniu", "qiniu-cdn"]
 
 [dependencies]
 anyhow = "1.0.86"
@@ -31,3 +33,4 @@ lto = true
 opt-level = "z"
 panic = "abort"
 strip = true
+codegen-units = 1
