@@ -160,8 +160,13 @@ impl Client {
             for (count, t) in row_counts.iter().skip(skip) {
                 if count.ge(&warn_count) {
                     let send_mark_file_path = PathBuf::from(
-                        format!("/tmp/qiniu/monitor/count/{}{}", domains.join(","), t)
-                            .replace(" ", ""),
+                        format!(
+                            "/tmp/qiniu/monitor/count/{}{}{}",
+                            domains.join(","),
+                            t,
+                            count
+                        )
+                        .replace(" ", ""),
                     );
                     if send_mark_file_path.exists() {
                         continue;

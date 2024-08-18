@@ -174,7 +174,8 @@ impl Client {
             for (traffic_num, t) in traffic_rows.iter().skip(skip) {
                 if traffic_num.ge(&warn_traffic) {
                     let send_mark_file_path = PathBuf::from(
-                        format!("/tmp/qiniu/monitor/traffic/{}{}", domain, t).replace(" ", ""),
+                        format!("/tmp/qiniu/monitor/traffic/{}{}{}", domain, t, traffic_num)
+                            .replace(" ", ""),
                     );
                     if send_mark_file_path.exists() {
                         continue;
