@@ -385,15 +385,14 @@ impl Client {
                 return Err(anyhow!("{}", response.error.unwrap()));
             }
             println!("{}", "操作成功 ✅".green());
-            return Ok(ips.len());
         } else {
             let response = self.ip_acl(ips.clone(), ip_acltype, domain).await?;
             if response.code.is_some() && response.code.unwrap() != 200 {
                 return Err(anyhow!("{}", response.error.unwrap()));
             }
             println!("{}", "操作成功 ✅".green());
-            return Ok(ips.len());
         }
+        Ok(ips.len())
     }
 
     pub async fn diagnose_ip(

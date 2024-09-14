@@ -319,7 +319,7 @@ mod tests {
                 "2024-07-16",
                 "2024-07-16",
                 FilterType::Traffic,
-                domains,
+                domains.clone(),
             )
             .await
             .unwrap();

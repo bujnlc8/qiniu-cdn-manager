@@ -8,7 +8,7 @@ license = "MIT"
 edition = "2021"
 repository = "https://github.com/bujnlc8/qiniu-cdn-manager"
 categories = ["command-line-utilities"]
-exclude = ["snapshots", "Makefile"]
+exclude = ["snapshots", "Makefile", "bacon.toml"]
 keywords = ["qiniu", "qiniu-cdn"]
 
 [dependencies]
