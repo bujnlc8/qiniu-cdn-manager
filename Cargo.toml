@@ -12,7 +12,7 @@ exclude = ["snapshots", "Makefile", "bacon.toml"]
 keywords = ["qiniu", "qiniu-cdn"]
 
 [dependencies]
-anyhow = "1.0.86"
+anyhow = "1.0.90"
 base64 = "0.22.1"
 chrono = "0.4.38"
 clap = { version = "4.5.9", features = ["derive"] }
